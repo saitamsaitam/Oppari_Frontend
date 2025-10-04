@@ -1,27 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Inventory from "./pages/Inventory";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      
-      <h1>Vite + React</h1>
-      <div style={{ 
-      display: "flex", 
-      justifyContent: "center", 
-      alignItems: "center", 
-      height: "100vh",
-      fontSize: "2rem",
-      fontFamily: "sans-serif"
-    }}>
-      Hello World
-    </div>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Layout><Home /></Layout>} 
+        />
 
-export default App
+        <Route 
+          path="/inventory" 
+          element={<Layout><Inventory /></Layout>} 
+        />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
