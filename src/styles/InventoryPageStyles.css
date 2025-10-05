@@ -1,0 +1,183 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: block;
+  background: linear-gradient(to top right, #090911 0%, #fafafa 100%);
+}
+
+/* Container grid */
+.app {
+  display: grid;
+  grid-template-rows: 60px 300px 300px 400px; /* navbar + title + hello + products */
+  grid-template-columns: 1fr; /* single column layout */
+  gap: 10px; /* spacing between rows */
+  width: 100%;
+  min-height: 100vh;
+  /* background: #f5f5f5; */
+}
+
+
+
+/* Title row */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  /* background: #ddd; */
+}
+
+/* Product count row */
+.productCountText {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  /* background: #eee; */
+}
+
+
+
+
+.clickable {
+  cursor: pointer;
+  user-select: none; /* prevents text highlight on click */
+}
+
+
+
+/* Entire table */
+.products-table {
+  width: 100%;
+  border-collapse: collapse; /* remove gaps between cells */
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.table-header {
+  background-color: #444; /* dark navbar color */
+  color: white;
+}
+
+.table-header th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #666;
+}
+
+/* Table body rows */
+.even-row {
+  background-color: #3bb545; /* light gray */
+}
+
+.odd-row {
+  background-color: #d3ca0f; /* white */
+}
+
+.table-body tr:hover {
+  background-color: #ca1111; /* hover highlight */
+}
+
+.table-cell {
+  position: relative;
+}
+
+.table-cell span.arrow {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+/* Column-specific styling */
+.cell-name {
+  font-weight: bold;
+}
+
+.cell-category {
+  color: #444;
+}
+
+.cell-quantity,
+.cell-price {
+  text-align: right;
+}
+
+.cell-date,
+.cell-expiration {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Optional: cell borders */
+.products-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 85rem;
+  align-items: center;
+  padding: 1rem;
+  /*background: linear-gradient(90deg, #4facfe, #00f2fe); */
+  color: white;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  color: #aaa; /* Default link color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #fff; /* Hover link color */
+}
+
+.nav-links a.active-link {
+  color: #fff; /* Active link color */
+  font-weight: bold;
+}
