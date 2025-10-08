@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+html, body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(to top right, #090911 0%, #fafafa 100%);
+}
+
+
+
+
+/* Title row */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  /* background: #ddd; */
+}
+
+/* Product count row */
+.productCountText {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  /* background: #eee; */
+}
+
+
+.inventoryPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.toggle-price-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.toggle-price-button:hover {
+  background-color: #666;
+}
+
+.toggle-price-button:focus,
+.toggle-price-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.inventory-form {
+  width: 1000px;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+.products {
+  display: flex;
+}
+
+/* Entire table */
+.products-table {
+  width: 100%;
+  border-collapse: collapse; /* remove gaps between cells */
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.table-header {
+  background-color: #444; /* dark navbar color */
+  color: white;
+}
+
+.table-header th {
+  position: sticky;
+  top: 0; /* stick to the top of scroll area*/
+  background-color: #444; /* dark navbar color */
+  color: white;
+  z-index: 2; /* ensure it stays above table rows */
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #666;
+}
+
+
+/* Optional: cell borders */
+.products-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table body rows */
+/* .even-row {
+  background-color: #555; 
+}
+
+.odd-row {
+  background-color: #777; 
+} */
+
+.table-body {
+  background-color: #666;
+}
+
+.table-body tr:hover {
+  background-color: #888; /* hover highlight */
+}
+
+.table-cell {
+  position: relative;
+}
+
+.table-cell span.arrow {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+/* Column-specific styling */
+.cell-name {
+  font-weight: bold;
+}
+
+/* .cell-category {
+  text-transform: capitalize;
+} */
+
+.cell-quantity,
+.cell-price,
+.cell-totalValue {
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-price::after, .cell-totalValue::after {
+  content: "€"; /* Append Euro symbol */
+  margin-left: 2px;
+  font-size: 0.9rem;
+}
+
+.cell-date,
+.cell-expiration {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+
+
+.clickable {
+  cursor: pointer;
+  user-select: none; /* prevents text highlight on click */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 85rem;
+  align-items: center;
+  padding: 1rem;
+  /*background: linear-gradient(90deg, #4facfe, #00f2fe); */
+  color: white;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  color: #aaa; /* Default link color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #fff; /* Hover link color */
+}
+
+.nav-links a.active-link {
+  color: #fff; /* Active link color */
+  font-weight: bold;
+}
