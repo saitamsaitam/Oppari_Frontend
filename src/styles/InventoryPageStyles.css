@@ -1,25 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
-body {
+html, body {
   margin: 0;
   font-family: sans-serif;
-  display: block;
+  overflow-x: hidden;
   background: linear-gradient(to top right, #090911 0%, #fafafa 100%);
 }
 
-/* Container grid */
-.app {
-  display: grid;
-  grid-template-rows: 60px 300px 300px 400px; /* navbar + title + hello + products */
-  grid-template-columns: 1fr; /* single column layout */
-  gap: 10px; /* spacing between rows */
-  width: 100%;
-  min-height: 100vh;
-  /* background: #f5f5f5; */
-}
 
 
 
@@ -40,20 +34,57 @@ body {
 }
 
 
+.inventoryPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
 
-
-.clickable {
+.toggle-price-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  user-select: none; /* prevents text highlight on click */
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.toggle-price-button:hover {
+  background-color: #666;
+}
+
+.toggle-price-button:focus,
+.toggle-price-button:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 
+.inventory-form {
+  width: 1000px;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+.products {
+  display: flex;
+}
 
 /* Entire table */
 .products-table {
   width: 100%;
   border-collapse: collapse; /* remove gaps between cells */
-  margin-top: 1rem;
   font-family: Arial, sans-serif;
 }
 
@@ -64,23 +95,39 @@ body {
 }
 
 .table-header th {
+  position: sticky;
+  top: 0; /* stick to the top of scroll area*/
+  background-color: #444; /* dark navbar color */
+  color: white;
+  z-index: 2; /* ensure it stays above table rows */
   padding: 0.75rem 1rem;
   text-align: left;
   font-weight: bold;
   border-bottom: 2px solid #666;
 }
 
+
+/* Optional: cell borders */
+.products-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
 /* Table body rows */
-.even-row {
-  background-color: #3bb545; /* light gray */
+/* .even-row {
+  background-color: #555; 
 }
 
 .odd-row {
-  background-color: #d3ca0f; /* white */
+  background-color: #777; 
+} */
+
+.table-body {
+  background-color: #666;
 }
 
 .table-body tr:hover {
-  background-color: #ca1111; /* hover highlight */
+  background-color: #888; /* hover highlight */
 }
 
 .table-cell {
@@ -97,30 +144,37 @@ body {
   font-weight: bold;
 }
 
-.cell-category {
-  color: #444;
-}
+/* .cell-category {
+  text-transform: capitalize;
+} */
 
 .cell-quantity,
-.cell-price {
+.cell-price,
+.cell-totalValue {
   text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-price::after, .cell-totalValue::after {
+  content: "€"; /* Append Euro symbol */
+  margin-left: 2px;
+  font-size: 0.9rem;
 }
 
 .cell-date,
 .cell-expiration {
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
-}
-
-/* Optional: cell borders */
-.products-table td {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ddd;
 }
 
 
 
+
+.clickable {
+  cursor: pointer;
+  user-select: none; /* prevents text highlight on click */
+}
 
 
 
