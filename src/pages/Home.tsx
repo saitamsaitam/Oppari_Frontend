@@ -1,18 +1,27 @@
-// src/pages/Home.jsx
+// src/pages/Home.tsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 
-const Home = () => {
+// Define a type for Product
+interface Product {
+  id: number;
+  name: string;
+  quantity: number;
+  expiration_date: string; // You could also use Date if you parse it
+}
+
+const Home: React.FC = () => {
   const username = "John";
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/items")
+    axios
+      .get<Product[]>("http://localhost:8080/api/items")
       .then(res => setProducts(res.data))
-      .catch(err => setError(err))
+      .catch(err => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
 
@@ -26,7 +35,11 @@ const Home = () => {
       <div className="helloAndCount">
         <p className="hello">Hello, {username}! Welcome back.</p>
         <p className="productCount">
-          {loading ? "Loading..." : error ? "Error loading products" : `Total products: ${products.length}`}
+          {loading
+            ? "Loading..."
+            : error
+            ? "Error loading products"
+            : `Total products: ${products.length}`}
         </p>
       </div>
 
