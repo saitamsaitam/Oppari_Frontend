@@ -19,7 +19,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get<Product[]>("http://localhost:8080/api/items")
+      .get<Product[]>(`http://localhost:8080/api/item/getAll/${1}`)
       .then(res => setProducts(res.data))
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));

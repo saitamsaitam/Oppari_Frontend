@@ -6,6 +6,7 @@ import "../styles/FilterPanelStyles.css";
 export type ColumnKey =
   | "name"
   | "category"
+  | "leftOver"
   | "quantity"
   | "price"
   | "totalValue"

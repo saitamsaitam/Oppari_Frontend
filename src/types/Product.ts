@@ -4,11 +4,10 @@
 export interface Product {
   id: number;
   name: string;
-  quantity: number;
-  expirationDate: string; // or Date if parsed
-  price: number;
   category: string | { name: string }; // support both string and object
-  leftovers?: number;
-  dateOfPurchase?: string;
-  opened: boolean;
+  quantity: number;
+  leftOver: number;
+  price?: number; // price per unit
+  dateOfPurchase: string; // or Date if parsed
+  expirationDate?: string | null; // or Date if parsed
 }

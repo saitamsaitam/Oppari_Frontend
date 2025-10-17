@@ -1,0 +1,28 @@
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 85rem;
+  align-items: center;
+  padding: 1rem;
+  /*background: linear-gradient(90deg, #4facfe, #00f2fe); */
+  color: white;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  color: #aaa; /* Default link color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #fff; /* Hover link color */
+}
+
+.nav-links a.active-link {
+  color: #fff; /* Active link color */
+  font-weight: bold;
+}
